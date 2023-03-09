@@ -147,39 +147,42 @@
 
 ```js
 function mergeSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
-  }
+    if (arr.length <= 1) {
+        return arr;
+    }
 
-  const middle = Math.floor(arr.length / 2);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle);
+    const middle = Math.floor(arr.length / 2);
+    const left = arr.slice(0, middle);
+    const right = arr.slice(middle);
 
-  return merge(mergeSort(left), mergeSort(right));
+    return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(left, right) {
-  const result = [];
+    const result = [];
 
-  while (left.length && right.length) {
-    if (left[0] <= right[0]) {
-      result.push(left.shift());
-    } else {
-      result.push(right.shift());
+    while (left.length && right.length) {
+        if (left[0] <= right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
     }
-  }
 
-  while (left.length) {
-    result.push(left.shift());
-  }
+    while (left.length) {
+        result.push(left.shift());
+    }
 
-  while (right.length) {
-    result.push(right.shift());
-  }
+    while (right.length) {
+        result.push(right.shift());
+    }
 
-  return result;
+    return result;
 }
 ```
+
+Данный алгоритм хорошо работает лишь потому, что оба исходных массива были заранее отсортированы, поэтому ему не нужно
+возвращаться в их начало во время очередной итерации.
 
 ---
 
