@@ -1120,7 +1120,8 @@ SELECT * FROM my_view;
 Создать материализованное представление в PostgreSQL можно с помощью команды CREATE MATERIALIZED VIEW. Например:
 
 ```sql
-CREATE MATERIALIZED VIEW my_mat_view AS SELECT column1, column2 FROM my_table WHERE column3 = 'value';
+CREATE MATERIALIZED VIEW my_mat_view AS SELECT column1, column2 
+FROM my_table WHERE column3 = 'value';
 ```
 
 Для обновления данных в материализованном представлении нужно выполнить команду REFRESH MATERIALIZED VIEW. Например:
