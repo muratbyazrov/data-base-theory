@@ -37,3 +37,5 @@ EXPLAIN SELECT * FROM users WHERE age > 25;
 ```sql
 EXPLAIN ANALYZE SELECT * FROM mytable WHERE mycolumn = 'myvalue';
 ```
+
+- есть команда analyse <table> - там можно увидеть статистику
