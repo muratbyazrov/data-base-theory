@@ -87,7 +87,6 @@ HAVING count(*) > 1
 
 ```sql
 -- Этот запрос пронумерует строки в таблице employees в порядке убывания зарплаты и вернет столбцы name, salary и rank.
-
 SELECT name, salary, ROW_NUMBER() OVER (ORDER BY salary DESC) as rank
 FROM employees;
 ```
