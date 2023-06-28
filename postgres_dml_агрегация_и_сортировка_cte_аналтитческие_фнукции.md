@@ -43,7 +43,6 @@ GROUPING SETS (staff, (staff, customer))
 
 ```sql
 -- покажет уникальные staff и их количество, причем только те, у которых кол-во > 1
-
 SELECT staff count(*)
 FROM rent
 GROUP BY staff
