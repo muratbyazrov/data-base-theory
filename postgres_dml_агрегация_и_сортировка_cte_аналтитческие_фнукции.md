@@ -126,9 +126,15 @@ WINDOW <имя окна> AS ( [ <определение окна> ] )
   строк, над которыми должна быть выполнена функция.
 
 ```sql
--- Этот запрос пронумерует строки в таблице employees в порядке убывания зарплаты и вернет столбцы name, salary и rank.
-SELECT name, salary, ROW_NUMBER() OVER (ORDER BY salary DESC) as rank
-FROM employees;
+-- В этом примере используются две оконные функции: AVG() для вычисления средней зарплаты в каждом отделе (сгруппированном по department_id) и ROW_NUMBER() для нумерации строк по убыванию зарплаты
+SELECT
+  employee_id,
+  last_name,
+  salary,
+  AVG(salary) OVER (PARTITION BY department_id) AS avg_salary,
+  ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_number
+FROM
+  employees;
 ```
 
 - `RANK` и `DENSE_RANK` - это ранжирование
@@ -139,8 +145,3 @@ FROM employees;
   увеличенный на количество пропущенных значений
 - `DENSE_RANK` отличается только тем, что следующая строчка получит ранг увеличенный не на количество пропущенных
   значений, а на 1 (то есть последовательно)
-
-```sql
-SELECT name, score, RANK() OVER (ORDER BY score DESC) AS rank
-FROM students;
-```
