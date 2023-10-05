@@ -70,4 +70,17 @@ LANGUAGE plpgsql;
 
 #### Курсор
 
--- остановился на 1.13.57
+Курсор нужен для перебора данных
+
+```sql
+-- Без транзакции курсоры не работают
+BEGIN;
+-- Открыть курсор для выполнения запроса
+DECLARE my_cursor CURSOR FOR SELECT saga_id, step FROM sagas;
+-- Прочитать данные из курсора
+FETCH NEXT FROM my_cursor;
+-- Закрыть курсор
+CLOSE my_cursor;
+
+COMMIT;
+```
