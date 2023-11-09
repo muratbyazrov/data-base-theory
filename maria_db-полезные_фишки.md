@@ -13,5 +13,5 @@ SELECT
 FROM
     information_schema.columns T1,
     information_schema.columns T2
-LIMIT 1;
+LIMIT 100000;
 ```
