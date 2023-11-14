@@ -7,7 +7,7 @@ SELECT
     FLOOR(1 + (RAND() * 3)),
     NULL,
     NOW(),
-    NOW(),
+    NOW() - INTERVAL FLOOR(RAND() * 30) DAY, -- Генерация случайного числа от 0 до 30 для рандомизации дней
     FLOOR(1 + (RAND() * 75)),
     UUID()
 FROM
