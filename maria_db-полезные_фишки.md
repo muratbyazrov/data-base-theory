@@ -19,7 +19,8 @@ SELECT
     false,
     FLOOR(1 + (RAND() * 200)),
     FLOOR(0 + (RAND() * 1)),
-    ELT(1 + FLOOR(RAND() * 4), 'BANNED', 'WHITELISTED', 'NORMAL'), -- Выбор рандомного значения ENUM
+-- Выбор рандомного значения ENUM
+    ELT(1 + FLOOR(RAND() * 4), 'BANNED', 'WHITELISTED', 'NORMAL'), 
     FLOOR(1 + (RAND() * 200)),
     FLOOR(1 + (RAND() * 200)),
     ELT(1 + FLOOR(RAND() * 4), 'WAITING', 'CHANGED', 'OK', 'INVALID'), -- Выбор рандомного значения ENUM
