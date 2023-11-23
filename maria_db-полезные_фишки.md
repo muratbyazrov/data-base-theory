@@ -14,3 +14,13 @@ FROM
     information_schema.columns T2
 LIMIT 10000;
 ```
+
+- При замене процедуры
+```sql
+CREATE OR REPLACE DEFINER=`root`@`localhost` PROCEDURE ...;
+```
+На самом деле происходит
+```sql
+DROP PROCEDURE IF EXISTS name;
+CREATE PROCEDURE name ...;
+```
