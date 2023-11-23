@@ -1,4 +1,4 @@
-- Сгенерировать сколь угодно много записей
+## Сгенерировать сколь угодно много записей
 
 ```sql
 INSERT INTO wallets (create_dttm, hall_id, nickname, had_card, validation_status)
@@ -15,7 +15,7 @@ FROM
 LIMIT 10000;
 ```
 
-- При замене процедуры
+## При замене процедуры
 ```sql
 CREATE OR REPLACE DEFINER=`root`@`localhost` PROCEDURE ...;
 ```
