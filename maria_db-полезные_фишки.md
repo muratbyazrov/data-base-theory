@@ -24,3 +24,5 @@ CREATE OR REPLACE DEFINER=`root`@`localhost` PROCEDURE ...;
 DROP PROCEDURE IF EXISTS name;
 CREATE PROCEDURE name ...;
 ```
+за исключением того, что все существующие привилегии для этой процедуры не удаляются.
+Это из оф. документа: https://mariadb.com/kb/en/create-procedure/#or-replace
