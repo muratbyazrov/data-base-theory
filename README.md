@@ -16,3 +16,4 @@
 - [postgres_pentaho_report_designer_and_OLAP.md](postgres_pentaho_report_designer_and_OLAP.md)
 - [postgres_типы_данных.md](postgres_типы_данных.md)
 - [postgres_хранимые процедуры и триггеры.md](postgres_хранимые_процедуры_и_тригеры.md)
+- [postgres_резервное копирование и мониторинг.md](postgres_резервное_копирование_и_мониторинг.md)
